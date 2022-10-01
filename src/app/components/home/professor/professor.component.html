@@ -1,1 +1,14 @@
-<p>professor works!</p>
+<app-navbar [botonLogout]="true" ></app-navbar>
+
+<div class="bootstrap-wrappers">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">                
+                <app-sidebar-professor></app-sidebar-professor>
+            </div>
+            <div class="col-md-10">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

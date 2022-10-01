@@ -1,1 +1,8 @@
-<p>navbar works!</p>
+<mat-toolbar color="primary">
+
+    <span>Análisis de resumen</span>
+    <span class="example-spacer" ></span> 
+    <button *ngIf="botonLogin" type="button" class="btn btn-personal" (click)="iniciarSesion()" >Iniciar Sesión</button>
+    <button *ngIf="botonSingup" type="button" class="btn btn-personal" (click)="registrarse()" >Registrarse</button>
+    <button *ngIf="botonLogout" type="button" class="btn btn-personal" (click)="cerrarSesion()" >Cerrar Sesión</button>
+</mat-toolbar>

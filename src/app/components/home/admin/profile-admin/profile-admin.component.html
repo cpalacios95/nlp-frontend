@@ -1,0 +1,48 @@
+<mat-card>
+    <h1>Detalles del perfil</h1>
+    <mat-card-content>
+        <div class="boostrartp-wrappers">
+            <div class="container">
+                <div class="text-center">
+                    <img src="../../../../../assets/img/default.jpg" alt="" class="profile-image">
+                    <h1 class="mt20" >{{usr.usrNombresDto}}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table text-center">
+                            <tr>
+                                <td>Nombre/s</td>
+                                <td>{{ usr.usrNombresDto }}</td>
+                            </tr>
+                            <tr>
+                                <td>Apellido/s</td>
+                                <td>{{ usr.usrApellidosDto }}</td>
+                            </tr>
+                            <tr>
+                                <td>Correo electrónico</td>
+                                <td>{{ usr.usrEmailDto }}</td>
+                            </tr>
+                            <tr>
+                                <td>Contraseña</td>
+                                <td>{{ usr.usrContraseniaDto }}</td>
+                            </tr>
+                            <tr>
+                                <td>Fecha de alta</td>
+                                <td>{{ usr.usrFechaCreacionDto }}</td>
+                            </tr>
+                            <tr>
+                                <td>Rol</td>
+                                <td>{{ usr.rolIdDto.rolDescripcionDto }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>                
+        </div>
+        <mat-card-actions class="text-center">
+            <button mat-raised-button color="primary" routerLink="/admin" >Aceptar</button>
+            <button type="button" style = "margin-left: 20px;" (click)="modificar()" mat-raised-button color="accent">Modificar datos</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>

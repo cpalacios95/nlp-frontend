@@ -1,0 +1,111 @@
+<mat-card>
+    <h1>Detalles del perfil</h1>
+    <mat-card-content>
+        <div class="boostrartp-wrappers">
+            <div class="container">
+                <div class="text-center">
+                    <img src="../../../../../assets/img/default.jpg" alt="" class="profile-image">
+                    <h1 class="mt20" >{{usr.usrNombresDto}}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+
+                        <form [formGroup]="forma" (ngSubmit)="onSubmit()">
+                
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Nombre/s</span>
+                                <input type="text" class="form-control" placeholder="{{ usr.usrNombresDto }}" aria-label="Username" aria-describedby="basic-addon1"
+                                [class.is-invalid]="nombreNoValido"
+                                formControlName="nombre"
+                                >
+                            </div>
+                            <small id="alert" class="text-danger" *ngIf="nombreNoValido" >Ingrese su nombre</small>
+                            
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Apellido/s</span>
+                                <input type="text" class="form-control" placeholder="{{ usr.usrApellidosDto }}" aria-label="Username" aria-describedby="basic-addon1"
+                                [class.is-invalid]="apellidoNoValido"
+                                formControlName="apellido"
+                                >
+                            </div>
+                            <small id="alert" class="text-danger" *ngIf="apellidoNoValido" >Ingrese su apellido</small>
+                            
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Contraseña</span>
+                                <input type="text" class="form-control" placeholder="{{ usr.usrContraseniaDto }}" aria-label="Username" aria-describedby="basic-addon1"
+                                [class.is-invalid]="passNoValido"
+                                formControlName="contrasenia"
+                                >
+                            </div>
+                            <small id="alert" class="text-danger" *ngIf="passNoValido" >La contraseña debe tener al menos 5 caracteres</small>
+                            
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Repetir contraseña</span>
+                                <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"
+                                [class.is-invalid]="pass2NoValido"
+                                formControlName="contrasenia2"
+                                >
+                            </div>
+                            <small id="alert" class="text-danger" *ngIf="pass2NoValido" >Las contraseñas deben ser iguales</small>
+
+                            <br>
+        
+                            <div class="container text-center">
+                                <button type="submit" mat-raised-button color="primary">Aceptar</button>
+                                <button type="reset" mat-raised-button color="accent" style="margin-left: 20px;" >Limpiar</button>
+                            </div>
+        
+                            
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>                
+        </div>
+    </mat-card-content>
+</mat-card>
+
+
+<!-- <hr>
+<pre>
+  Estado del formulario: {{forma.valid}}
+  <br>
+  Status: {{forma.status}}  
+</pre>
+
+<pre>
+  {{forma.value | json }}
+</pre> -->
+<!-- 
+<mat-form-field class="full-width" appearance="outline">
+    <mat-label>{{ usr.usrNombresDto }}</mat-label>
+    <input matInput
+    formControlName="nombre" 
+    >
+    <mat-hint class="color" *ngIf="nombreNoValido">Ingrese su nombre</mat-hint>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline">
+    <mat-label>{{ usr.usrApellidosDto }}</mat-label>
+    <input matInput
+    formControlName="apellido" 
+    >
+    <mat-hint class="color" *ngIf="apellidoNoValido">Ingrese su apellido</mat-hint>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline">
+    <mat-label>{{ usr.usrContraseniaDto }}</mat-label>
+    <input matInput
+    formControlName="contrasenia" 
+    >
+    <mat-hint class="color" *ngIf="passNoValido">La contraseña debe tener al menos 5 caracteres</mat-hint>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline">
+    <mat-label>Repetir contraseña</mat-label>
+    <input matInput
+    formControlName="contrasenia2" 
+    >
+    <mat-hint class="color" *ngIf="pass2NoValido"></mat-hint>
+</mat-form-field> -->

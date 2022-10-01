@@ -1,1 +1,102 @@
-<p>singup works!</p>
+<app-navbar [botonLogin]="true"></app-navbar>
+
+<div class = "bootstrap-wrapper animated fadeIn">
+    <div class = "container">
+      <div class = "row mt20">
+        <div class = "col-md-6 offset-md-3">
+          <br><br><br>
+            <mat-card>
+                <div class = "container text-center">
+                <img src="../../../../assets/img/add-user.png" width = "100" height = "100">
+                </div>
+                <h1 class = "text-center">Registrarse</h1>
+                <form [formGroup]="forma" (ngSubmit)="onSubmit()">
+                
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Nombre/s</mat-label>
+                        <input matInput
+                        formControlName="nombre" 
+                        >
+                        <mat-hint class="color" *ngIf="nombreNoValido">Ingrese su nombre</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Apellido/s</mat-label>
+                        <input matInput
+                        formControlName="apellido" 
+                        >
+                        <mat-hint class="color" *ngIf="apellidoNoValido">Ingrese su apellido</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput
+                        formControlName="email" 
+                        >
+                        <mat-hint class="color" *ngIf="correoNoValido">El formato del correo electrónico es example@example.com</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput
+                        formControlName="contrasenia" 
+                        >
+                        <mat-hint class="color" *ngIf="passNoValido">La contraseña debe tener al menos 5 caracteres</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Repetir contraseña</mat-label>
+                        <input matInput
+                        formControlName="contrasenia2" 
+                        >
+                        <mat-hint class="color" *ngIf="pass2NoValido"></mat-hint>
+                    </mat-form-field>
+
+                    <div class="full-widt text-center">
+                        <mat-label class="text-center">
+                            <b>
+                                Seleccionar Rol
+                            </b>
+                        </mat-label>
+                    </div>
+
+                    <br>
+                    
+                    <div class="full-widht text-center">
+                        <mat-radio-group class="text-center" aria-label="Select an option">
+                            <mat-radio-button value="1" (click)="rol(2)" checked >Estudiante</mat-radio-button>
+                            <mat-radio-button value="2" (click)="rol(3)" >   Profesor</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+                    <br>
+
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary">Registrarse</button>
+                        <button mat-raised-button color="accent" style="margin-left: 20px;" >Limpiar</button>
+                    </div>
+
+                    
+                </form>
+    
+            </mat-card>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>
+
+<!-- 
+<hr>
+<pre>
+  Estado del formulario: {{forma.valid}}
+  <br>
+  Status: {{forma.status}}  
+</pre>
+
+<pre>
+  {{forma.value | json }}
+</pre>
+ -->
