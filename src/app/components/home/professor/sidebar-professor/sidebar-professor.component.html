@@ -7,6 +7,12 @@
         <button mat-list-item routerLink="profile">
             <mat-icon mat-list-icon>account_circle</mat-icon>Perfil
         </button>
+        <button mat-list-item>
+            <mat-icon mat-list-icon (click)="algoritmos()" >list</mat-icon>Algoritmos
+        </button>
+        <button mat-list-item>
+            <mat-icon mat-list-icon routerLink="ver-resumenes" >description</mat-icon>Resumenes pendientes de revision
+        </button>
     </mat-action-list>
 </mat-card>
 

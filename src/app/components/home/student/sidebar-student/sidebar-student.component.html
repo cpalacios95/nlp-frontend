@@ -1,11 +1,17 @@
-<mat-card>
+<mat-card class="sidebar">
     <mat-action-list>
         <div mat-subheader>Menú</div>
         <button mat-list-item>
-            <mat-icon mat-list-icon>home</mat-icon>Inicio
+            <mat-icon mat-list-icon color="primary" >home</mat-icon>Inicio
         </button>
         <button mat-list-item routerLink="profile">
-            <mat-icon mat-list-icon>account_circle</mat-icon>Perfil
+            <mat-icon mat-list-icon color="primary">account_circle</mat-icon>Perfil
+        </button>
+        <button mat-list-item (click)="nuevoResumen()">
+            <mat-icon mat-list-icon color="primary">description</mat-icon>Nuevo Resumen
+        </button>
+        <button mat-list-item (click)="verMisResumenes()">
+            <mat-icon mat-list-icon color="primary">receipt</mat-icon>Mis Resumenes
         </button>
     </mat-action-list>
 </mat-card>

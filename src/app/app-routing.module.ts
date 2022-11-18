@@ -1,3 +1,12 @@
+import { VerResumenProfesorComponent } from './components/home/professor/ver-resumen-profesor/ver-resumen-profesor.component';
+import { ModificarResumenComponent } from './components/home/student/modificar-resumen/modificar-resumen.component';
+import { AnalizarResumenComponent } from './components/home/student/analizar-resumen/analizar-resumen.component';
+import { VerUnResumenComponent } from './components/home/student/ver-un-resumen/ver-un-resumen.component';
+import { VerMisResumenesComponent } from './components/home/student/ver-mis-resumenes/ver-mis-resumenes.component';
+import { VerResumenesProfessorComponent } from './components/home/professor/ver-resumenes-professor/ver-resumenes-professor.component';
+import { NuevoResumenComponent } from './components/home/student/nuevo-resumen/nuevo-resumen.component';
+import { VerAlgortimoComponent } from './components/home/admin/ver-algortimo/ver-algortimo.component';
+import { AlgoritmoComponent } from './components/home/admin/algoritmo/algoritmo.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './components/home/admin/admin.component';
@@ -18,6 +27,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { AdminGuard } from './guards/admin/admin.guard';
 import { ProfessorGuard } from './guards/professor/professor.guard';
 import { StudentGuard } from './guards/student/student.guard';
+import { AlgoritmoProfessorComponent } from './components/home/professor/algoritmo-professor/algoritmo-professor.component';
+import { VerAlgortimoProffesorComponent } from './components/home/professor/ver-algortimo-proffesor/ver-algortimo-proffesor.component';
 
 const routes: Routes = [
   {
@@ -46,8 +57,20 @@ const routes: Routes = [
         component: ModificarAdminComponent
       },
       {
+        path:'admin',
+        component: InicioComponent
+      },
+      {
         path:'',
         component: InicioComponent
+      },
+      {
+        path:'algoritmos',
+        component: AlgoritmoComponent
+      },
+      {
+        path:'ver-algoritmo',
+        component: VerAlgortimoComponent
       }
     ] 
   },
@@ -61,8 +84,24 @@ const routes: Routes = [
         component: ProfileProfessorComponent
       },
       {
+        path:'ver-resumenes',
+        component: VerResumenesProfessorComponent
+      },
+      {
         path:'',
         component: InicioProfessorComponent
+      },
+      {
+        path:'algoritmos',
+        component: AlgoritmoProfessorComponent
+      },
+      {
+        path:'ver-algoritmo',
+        component: VerAlgortimoProffesorComponent
+      },
+      {
+        path:'resumen',
+        component:VerResumenProfesorComponent
       }
     ]
   },
@@ -78,7 +117,27 @@ const routes: Routes = [
       {
         path:'',
         component: InicioStudentComponent
-      }
+      },
+      {
+        path:'nuevo-resumen',
+        component: NuevoResumenComponent
+      },
+      {
+        path:'mis-resumenes',
+        component: VerMisResumenesComponent
+      },
+      {
+        path:'resumen',
+        component: VerUnResumenComponent,
+      },
+      {
+        path:'analizar',
+        component: AnalizarResumenComponent
+      },
+      {
+        path:'modificar',
+        component: ModificarResumenComponent
+      }      
     ]
   },
   {

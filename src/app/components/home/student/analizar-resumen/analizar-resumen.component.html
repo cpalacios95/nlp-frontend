@@ -1,0 +1,50 @@
+<mat-card class="caja animated fadeIn">
+    <mat-card-content>
+        <div class="boostrartp-wrappers">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="mt20" >{{resumen.titulo}}</h1>
+                </div>
+                <div mat-line>{{resumen.contenido}}</div>
+            </div>                
+        </div>
+        <mat-card-actions class="text-center">
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>
+
+<!-- <mat-card>
+    <mat-list>
+        <div mat-subheader>
+            Todos los algoritmos
+        </div>
+        <mat-list-item>
+            <div mat-line><b>{{algoritmo.titulo}}</b></div>
+            <div mat-line>{{algoritmo.descripcion}}</div>
+        </mat-list-item>
+    </mat-list>
+</mat-card> -->
+
+<select class="form-select caja2 animated fadeIn" aria-label="Default select example">
+    <option selected>Seleccionar Algoritmo</option>
+    <option value="1">{{algoritmo.titulo}}</option>
+  </select>
+
+<mat-card-actions class="text-center">
+    <button mat-raised-button class="verde" (click)="Analizar()" >Analizar</button>
+</mat-card-actions>
+
+<mat-card class="caja3 animated fadeIn" *ngIf="valor!=0">
+    <mat-card-content>
+        <div class="boostrartp-wrappers">
+            <div class="container">
+                <div class="text-center">
+                    <h3>{{resultadoAnalisis}}</h3>
+                </div>
+            </div>                
+        </div>
+    </mat-card-content>
+</mat-card>
+<mat-card-actions class="text-center" *ngIf="valor!=0">
+    <button mat-raised-button color="primary" (click)="verResumenes()" >Aceptar </button>
+</mat-card-actions>

@@ -1,0 +1,17 @@
+#fuente{
+    font-size: 20px;
+}
+#fuente2{
+    font-size: 15px;
+}
+.caja{
+
+    padding: 1px;
+    margin: 20px;
+
+}
+.clase{
+    background-color:silver;
+    text-align: center; 
+    
+}

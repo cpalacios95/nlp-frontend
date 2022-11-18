@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-list>
+        <div mat-subheader>
+            Todos los algoritmos
+        </div>
+        <mat-list-item>
+            <div mat-line><b>{{algoritmos.titulo}}</b></div>
+            <div mat-line>{{algoritmos.descripcion}}</div>
+            <button mat-raised-button (click)="ver()" color="primary">Ver</button>
+        </mat-list-item>
+    </mat-list>
+</mat-card>

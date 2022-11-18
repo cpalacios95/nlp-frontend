@@ -29,6 +29,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 //providers
 import { AUTHINTERCEPTORPROVIDERS } from './services/auth.interceptor.services';
@@ -40,6 +41,17 @@ import { SidebarStudentComponent } from './components/home/student/sidebar-stude
 import { ProfileStudentComponent } from './components/home/student/profile-student/profile-student.component';
 import { ForgotPasswordComponent } from './components/pages/forgot-password/forgot-password.component';
 import { ModificarAdminComponent } from './components/home/admin/modificar-admin/modificar-admin.component';
+import { AlgoritmoComponent } from './components/home/admin/algoritmo/algoritmo.component';
+import { VerAlgortimoComponent } from './components/home/admin/ver-algortimo/ver-algortimo.component';
+import { AlgoritmoProfessorComponent } from './components/home/professor/algoritmo-professor/algoritmo-professor.component';
+import { VerAlgortimoProffesorComponent } from './components/home/professor/ver-algortimo-proffesor/ver-algortimo-proffesor.component';
+import { NuevoResumenComponent } from './components/home/student/nuevo-resumen/nuevo-resumen.component';
+import { VerResumenesProfessorComponent } from './components/home/professor/ver-resumenes-professor/ver-resumenes-professor.component';
+import { VerMisResumenesComponent } from './components/home/student/ver-mis-resumenes/ver-mis-resumenes.component';
+import { VerUnResumenComponent } from './components/home/student/ver-un-resumen/ver-un-resumen.component';
+import { AnalizarResumenComponent } from './components/home/student/analizar-resumen/analizar-resumen.component';
+import { ModificarResumenComponent } from './components/home/student/modificar-resumen/modificar-resumen.component';
+import { VerResumenProfesorComponent } from './components/home/professor/ver-resumen-profesor/ver-resumen-profesor.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +72,18 @@ import { ModificarAdminComponent } from './components/home/admin/modificar-admin
     ProfileStudentComponent,
     ForgotPasswordComponent,
     ModificarAdminComponent,
-    NewPasswordComponent
+    NewPasswordComponent,
+    AlgoritmoComponent,
+    VerAlgortimoComponent,
+    AlgoritmoProfessorComponent,
+    VerAlgortimoProffesorComponent,
+    NuevoResumenComponent,
+    VerResumenesProfessorComponent,
+    VerMisResumenesComponent,
+    VerUnResumenComponent,
+    AnalizarResumenComponent,
+    ModificarResumenComponent,
+    VerResumenProfesorComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +99,8 @@ import { ModificarAdminComponent } from './components/home/admin/modificar-admin
     MatToolbarModule,
     MatSnackBarModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [ AUTHINTERCEPTORPROVIDERS ],
   bootstrap: [AppComponent]

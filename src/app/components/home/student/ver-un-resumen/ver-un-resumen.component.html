@@ -1,0 +1,58 @@
+<mat-card>
+    <mat-card-content>
+        <div class="boostrartp-wrappers">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="mt20" >{{resumen.titulo}}</h1>
+                </div>
+                <div mat-line>{{resumen.contenido}}</div>
+                <br><hr><br>
+                <div mat-line *ngIf="resumen.analisis!=undefined" ><b>Resultado Análsis IMRD: </b>{{resumen.analisis}}</div>
+                <div mat-line *ngIf="valor2!=0" ><b> Calificación: {{calificacion.valor}}</b> realizada por {{calificacion.nombre}} {{calificacion.apellido}} el dia {{calificacion.fecha}} a las {{calificacion.hora}}</div>
+
+            </div>                
+        </div>
+        <br>
+        <mat-card-actions class="text-center">
+            <button mat-raised-button color="primary" routerLink="/student/mis-resumenes" >Aceptar </button>
+            <button mat-raised-button color="accent" (click)="Modificar(resumen)" >Modificar </button>
+            <button mat-raised-button class="verde" (click)="Analizar(resumen)" >Analizar</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>
+<br><br>
+<mat-card *ngIf="tamanio!=0" >
+    <mat-card-content>
+        <div class="boostrartp-wrappers" *ngFor="let item of valores; let i = index" >
+            <div class="container">
+                <div mat-line> ({{ valores[i].comFechaCreacion }} - {{valores[i].comHora}} hs) Comentario realizado por {{valores[i].usrId.usrNombres}} {{ valores[i].usrId.usrApellidos }}: <b> {{ valores[i].comComentario }}</b>
+                </div>
+            </div>                
+        </div>
+        <mat-card-actions class="text-center">
+            <button mat-raised-button class="verde" (click)="Com()" >Responder</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>
+<div class="input-group mb-3" *ngIf="coment!=0">
+    <input type="text" class="form-control" placeholder="Responder" aria-label="Username" aria-describedby="basic-addon1" #valor >
+    <button type="button" class="btn btn-dark" (click)="Comentar(valor.value)" >Enviar</button>
+</div>
+
+
+<!-- <mat-card *ngFor="let item of comentario; let i=index">
+    <mat-card-content>
+        <div class="boostrartp-wrappers">
+            <div class="container">
+                <div mat-line>Comentario realizado por: {{item.usrId.usrNombres}}
+
+                </div>
+                <br><hr><br>
+                <div class="text-center">
+                    class="mt20" >{{resumen.titulo}}
+                </div>            
+            </div>                
+        </div>
+        <br>
+    </mat-card-content>
+</mat-card> -->

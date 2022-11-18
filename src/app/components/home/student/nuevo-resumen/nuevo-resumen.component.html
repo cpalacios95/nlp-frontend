@@ -1,0 +1,28 @@
+<mat-card>
+
+    <form [formGroup]="forma" (ngSubmit)="onSubmit()">
+                          
+            
+        <mat-form-field class = "full-width"  appearance = "outline">   
+            <mat-label>Ingrese el titulo del proyecto</mat-label> 
+            <input matInput
+            formControlName="titulo" 
+            >
+        </mat-form-field>
+        
+        <mat-form-field class = "full-width"  appearance = "outline">   
+            <mat-label>Ingrese el resumen (máximo 2000 caracteres)</mat-label> 
+            <input matInput
+            formControlName="resumen" 
+            >
+        </mat-form-field>
+
+        <div class = "container text-center">
+            <button type = "submit" mat-raised-button color="primary">Guardar</button>
+            <button type="button" class="verde" mat-raised-button style = "margin-left: 20px;" (click)="Analizar()" >Analizar</button>
+        </div>
+
+
+    </form>
+
+</mat-card>

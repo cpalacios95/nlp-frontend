@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-card-content>
+        <div class="boostrartp-wrappers">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="mt20" >{{resumen.titulo}}</h1>
+                </div>
+                <div mat-line>{{resumen.contenido}}</div>
+                <br><hr><br>
+                <div mat-line *ngIf="resumen.analisis!=undefined" ><b>Resultado Análsis IMRD: </b>{{resumen.analisis}}</div>
+                <div mat-line *ngIf="valor2!=0" ><b> Calificación: {{calificacion2.valor}}</b> realizada por {{calificacion2.nombre}} {{calificacion2.apellido}} el dia {{calificacion2.fecha}} a las {{calificacion2.hora}}</div>
+            </div>                
+        </div>
+        <br>
+        <mat-card-actions class="text-center">
+            <button mat-raised-button color="primary" routerLink="/student/mis-resumenes" >Aceptar </button>
+            <button mat-raised-button class="verde" (click)="Comentario()" >Relizar un comentario </button>
+            <button mat-raised-button color="accent" (click)="Calificar()" >Calificar</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>
+<br>
+<div class="input-group mb-3" *ngIf="coment!=0">
+    <input type="text" class="form-control" placeholder="Realizar comentario" aria-label="Username" aria-describedby="basic-addon1" #valor >
+    <button type="button" class="btn btn-dark" (click)="Comentar(valor.value)" >Enviar</button>
+</div>
+
+<mat-card-actions class="text-center" *ngIf="cal!=0" >
+    <button mat-raised-button class="verde" (click)="Cali(1)">Aprobado</button>
+    <button mat-raised-button color="primary" (click)="Cali(2)">Aprobado con Modificaciones</button>
+    <button mat-raised-button color="accent" (click)="Cali(3)">Rechazado</button>
+    
+</mat-card-actions>
+
+<mat-card *ngIf="tamanio!=0" >
+    <mat-card-content>
+        <div class="boostrartp-wrappers" *ngFor="let item of valores; let i = index" >
+            <div class="container">
+                <div mat-line> ({{ valores[i].comFechaCreacion }} - {{valores[i].comHora}} hs) Comentario realizado por {{valores[i].usrId.usrNombres}} {{ valores[i].usrId.usrApellidos }}: <b> {{ valores[i].comComentario }}</b>
+                </div>
+            </div>                
+        </div>
+        <mat-card-actions class="text-center">
+            <button mat-raised-button class="verde" (click)="Com()" >Responder</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>
+<div class="input-group mb-3" *ngIf="comente!=0">
+    <input type="text" class="form-control" placeholder="Responder" aria-label="Username" aria-describedby="basic-addon1" #valor >
+    <button type="button" class="btn btn-dark" (click)="Comentar2(valor.value)" >Enviar</button>
+</div>

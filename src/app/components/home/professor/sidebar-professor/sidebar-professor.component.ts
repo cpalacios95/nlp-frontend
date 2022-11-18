@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar-professor',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarProfessorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+  algoritmos(){
+    this.router.navigate(['professor/algoritmos']);
+  }
 
+  resumenes(){
+    this.router.navigate(['ver-resumenes']);
+  }
 }

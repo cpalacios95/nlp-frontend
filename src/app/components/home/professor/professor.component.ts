@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-professor',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessorComponent implements OnInit {
 
-  constructor() { }
+  usuario;
+
+  constructor(private loging: LoginService) {
+    let correo = this.loging.getUser();
+    let indice = correo.indexOf("@");
+    this.usuario= correo.substring(0, indice);
+   }
 
   ngOnInit(): void {
   }

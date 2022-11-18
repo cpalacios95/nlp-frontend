@@ -1,0 +1,30 @@
+<mat-card class="clase">
+    <mat-card-content>
+        <div class="bootstrap-wrappers">
+            <div class="container">
+                <div mat-line>
+                    Lista de resúmenes pendientes de revisión
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+<mat-card *ngFor="let item of resumes; let i =index" class="caja">
+    <mat-card-content>
+        <div class="bootstrap-wrappers">
+            <div class="container" >
+                <div class="">
+                    <h1 class="" id="fuente">{{i+1}}. {{resumes[i].resTitulo}} </h1>
+                </div>
+                <div mat-line id="fuente2"> Autor:
+                    {{resumes[i].usrId.usrNombres}}
+                    {{resumes[i].usrId.usrApellidos}}
+                </div>
+                <p>Subido el dia {{resumes[i].resFechaCreacion}} a las {{resumes[i].resHora}}</p>
+                <mat-card-actions class="text-center">
+                    <button mat-raised-button (click)="Ver(resumes[i])" color="primary">Ver</button>
+                </mat-card-actions>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

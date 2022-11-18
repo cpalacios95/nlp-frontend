@@ -1,8 +1,21 @@
 <mat-toolbar color="primary">
 
     <span>Análisis de resumen</span>
-    <span class="example-spacer" ></span> 
+    <span class="example-spacer" ></span>
+    <!-- <button mat-list-item *ngIf="botonDatos==false">
+        <mat-icon mat-list-icon color="primary">account_circle</mat-icon>
+    </button> -->
+    <!-- <mat-icon *ngIf="botonDatos==false" mat-list-icon color="primary">account_circle</mat-icon> -->
+
+    <button *ngIf="botonUsuario!=''"  type="button" class="btn btn-personal" >{{botonUsuario}}</button>
+
     <button *ngIf="botonLogin" type="button" class="btn btn-personal" (click)="iniciarSesion()" >Iniciar Sesión</button>
     <button *ngIf="botonSingup" type="button" class="btn btn-personal" (click)="registrarse()" >Registrarse</button>
     <button *ngIf="botonLogout" type="button" class="btn btn-personal" (click)="cerrarSesion()" >Cerrar Sesión</button>
+    
+    <!-- <button mat-list-item routerLink="profile">
+        <mat-icon mat-list-icon color="primary">account_circle</mat-icon>
+    </button> -->
+
+    <!-- <button *ngIf="botonDatos" type="button" class="btn btn-personal" (click)="cerrarSesion()" >Cerrar Sesión</button> -->
 </mat-toolbar>

@@ -1,0 +1,27 @@
+<mat-card class="clase">
+    <mat-card-content>
+        <div class="bootstrap-wrappers">
+            <div class="container">
+                <div mat-line>
+                    Mis resúmenes 
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card *ngFor="let item of resumes; let i =index" class="caja animated fadeIn" >
+    <mat-card-content>
+        <div class="bootstrap-wrappers">
+            <div class="container" >
+                <div class="">
+                    <h1 class="" id="fuente">{{i+1}}. Título: {{resumes[i].resTitulo}} </h1>
+                </div>
+                <p>Subido el dia {{resumes[i].resFechaCreacion}} a las {{resumes[i].resHora}}</p>
+                <mat-card-actions class="text-center">
+                    <button mat-raised-button color="primary" (click)="verResumen(resumes[i])" >Ver</button>
+                </mat-card-actions>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

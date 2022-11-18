@@ -13,11 +13,16 @@ export class NavbarComponent implements OnInit {
   @Input() botonLogin: boolean;
   @Input() botonSingup: boolean;
   @Input() botonLogout: boolean;
+  @Input() botonUsuario:string;
 
-  constructor(private router: Router, private loging: LoginService) { }
+  constructor(private router: Router, private loging: LoginService) { 
+
+
+  }
 
   ngOnInit(): void {
   }
+
 
 
   iniciarSesion(){
